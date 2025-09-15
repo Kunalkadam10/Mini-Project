@@ -74,8 +74,6 @@ class Bank:
     def bal(self):
         self.account_no[self.accno]["Balance"] = self.balance
         self.save_data()
-        # with open('acc_details.txt' , 'w') as f :
-            # json.dump(self.account_no , f , indent = 2)
         print(f"your update balance : {self.account_no[self.accno]["Balance"]}")
 
     @classmethod
@@ -143,4 +141,5 @@ def main():
 if __name__ == "__main__":
     Bank.load_data()
     main()
+
 
