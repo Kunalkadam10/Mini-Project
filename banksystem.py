@@ -11,7 +11,11 @@ class Bank:
 
     @staticmethod
     def generate_acc_no():
-        return random.randint(100000, 999999)
+        ac = random.randint(100000, 999999)
+        if ac in Bank.account_no:
+            return generate_acc_no()
+        else:
+            return ac
 
     def create_acc(self):
         self.accno = self.generate_acc_no()
@@ -141,5 +145,6 @@ def main():
 if __name__ == "__main__":
     Bank.load_data()
     main()
+
 
 
